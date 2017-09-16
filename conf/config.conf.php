@@ -13,8 +13,8 @@
 	 * flush privileges;	 
 	 */
 	$config['mysql']['hostname'] = "localhost";
-	$config['mysql']['username'] = "hanzecontact";
-	$config['mysql']['password'] = "c0nt3ct";
+	$config['mysql']['username'] = "root";
+	$config['mysql']['password'] = "";
 	$config['mysql']['database'] = "hanzecontact";
 
 	/**
