@@ -10,18 +10,21 @@
 	 * Deze functie genereerd een standaard HTML header	 
 	 */
 	function displayHeader() {
-		
 		global $config;
-		
-		echo "<html>";
-		echo "	<head>";
-		echo "		<title>".$config['pagetitle']."</title>";
-		echo "		<script type=\"text/javascript\" language=\"javascript\" src=\"js/general.js\"></script>";
-		echo "		<link type=\"text/css\" rel=\"stylesheet\" href=\"css/style.css\">";
-		echo "	</head>";
-		echo "	<body>";
-		echo "		<div id=\"wrapper\">";
-		
+
+		echo '<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>',$config['pagetitle'],'</title>
+<link type="text/css" rel="stylesheet" href="/css/style.css">
+<script type="text/javascript" language="javascript" src="/js/general.js"></script>
+</head>
+<body>
+<div id="wrapper">';
 	}
 	
 	
