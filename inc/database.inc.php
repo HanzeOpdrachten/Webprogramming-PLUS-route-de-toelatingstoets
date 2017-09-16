@@ -16,6 +16,12 @@
 		global $config;
 
 		$mysqli = new mysqli($config['mysql']['hostname'], $config['mysql']['username'], $config['mysql']['password'], $config['mysql']['database']);
+
+		if ($mysqli->connect_errno) {
+			http_response_code(503);
+			echo '<h1>Error Establishing A Database Connection</h1>';
+			exit(1);
+		}
 	}
 	
 	/**
