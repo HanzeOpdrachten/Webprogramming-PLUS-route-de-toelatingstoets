@@ -32,15 +32,14 @@
 	 * Deze functie genereerd een standaard HTML footer
 	 */
 	function displayFooter() {
-		
 		global $config;
-		
+
 		// hier zou plaats zijn voor bijvoorbeeld google analytics scripts
-		
-		echo "		</div>";
-		echo "	</body>";
-		echo "</html>";
-		
+
+		echo '
+</div>
+</body>
+</html>';
 	}
 	
 	/**
