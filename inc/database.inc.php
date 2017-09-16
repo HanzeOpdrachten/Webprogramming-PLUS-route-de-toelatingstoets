@@ -13,14 +13,9 @@
 	 *
 	 */
 	function databaseConnect() {
-			global $config;
-			
-			mysql_connect(	$config['mysql']['hostname'],
-							$config['mysql']['username'],
-							$config['mysql']['password']  );
-			
-			mysql_select_db($config['mysql']['database']);
-							
+		global $config;
+
+		$mysqli = new mysqli($config['mysql']['hostname'], $config['mysql']['username'], $config['mysql']['password'], $config['mysql']['database']);
 	}
 	
 	/**
@@ -28,9 +23,9 @@
 	 *
 	 */
 	function databaseDisconnect() {
-		
-		mysql_close();
-		
+
+		/*mysql_close();*/
+
 	}
 	
 	
