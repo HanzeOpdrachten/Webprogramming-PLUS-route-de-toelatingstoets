@@ -3,31 +3,35 @@
 	/**
 	 * Deze functie laat alle banen in het systeem zien	 *
 	 */
-	function displayAllJobs() {
-		
-		$sql = "SELECT * FROM `Jobs` ORDER BY `JobTitle`";		
-		$result = mysql_query($sql);
-		
+	function displayAllJobs($mysqli) {
+		$sql = "SELECT * FROM `Jobs` ORDER BY `JobTitle`";	
+
+		if (!$result = $mysqli->query($sql)) {
+			http_response_code(503);
+			echo '<h1>Database Error</h1>';
+			exit(1);
+		}
+
 		echo"<h1>Banen</h1>";
-		
+
 		echo"<br/>";
 		echo"<input type=\"button\" onclick=\"document.location.href='?action=addjob';\" value=\"Baan toevoegen\" />";
 		echo"<br/>";
 		echo"<br/>";
-		
+
 		echo"<table>";
-		
+
 		echo"	<tr>";
 		echo" 		<th>Titel</td>";
 		echo" 		<th>Minimum salaris</td>";
 		echo" 		<th>Maximum salaris</td>";
 		echo" 		<th>Actie</td>";
 		echo"	</tr>";
-		
-		while($row = mysql_fetch_assoc($result)) {
-			
+
+		while ($row = $result->fetch_assoc()) {
+
 			$row = escapeArray($row); // alle slashes weghalen
-			
+
 			echo"	<tr>";
 			echo"		<td>".$row['JobTitle']."</td>";
 			echo"		<td>".$row['MinSalary']."</td>";

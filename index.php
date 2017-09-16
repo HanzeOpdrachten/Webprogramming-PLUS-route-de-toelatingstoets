@@ -8,7 +8,7 @@
 	include("inc/general.inc.php"); // Algemene functies zoals drawHeader en drawFooter
 	include("inc/jobs.inc.php"); // Algemene functies zoals drawHeader en drawFooter
 		
-	databaseConnect(); // verbinding met de database maken
+	$mysqli = databaseConnect(); // verbinding met de database maken
 	
 	// Hieronder alle functies die geen output genereren naar de browser
 	// Dit is nodig om de 'warning headers already sent' fout te voorkomen
@@ -30,7 +30,7 @@
 	// Hieronder alle functies die wel output genereren naar de browser
 	switch(getCurrentAction()) {		
 		case "jobs":
-			displayAllJobs();
+			displayAllJobs($mysqli);
 		break;	
 		case "addjob":
 			displayAddJob();	
@@ -47,6 +47,6 @@
 	
 	displayFooter(); // de HTML footer tonen
 	
-	databaseDisconnect(); // verbinding met de database verbreken
+	databaseDisconnect($mysqli); // verbinding met de database verbreken
 
 ?>

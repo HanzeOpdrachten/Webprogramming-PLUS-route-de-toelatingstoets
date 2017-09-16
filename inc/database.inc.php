@@ -14,24 +14,25 @@
 	 */
 	function databaseConnect() {
 		global $config;
+		$mysqli;
 
 		$mysqli = new mysqli($config['mysql']['hostname'], $config['mysql']['username'], $config['mysql']['password'], $config['mysql']['database']);
 
 		if ($mysqli->connect_errno) {
 			http_response_code(503);
-			echo '<h1>Error Establishing A Database Connection</h1>';
+			echo '<h1>Database Error</h1>';
 			exit(1);
 		}
+
+		return $mysqli;
 	}
 	
 	/**
 	 * Deze functie verbreekt de verbinding met de database server
 	 *
 	 */
-	function databaseDisconnect() {
-
-		/*mysql_close();*/
-
+	function databaseDisconnect($mysqli) {
+		$mysqli->close();
 	}
 	
 	
