@@ -49,10 +49,10 @@
 		echo '
 <div id="navigation">
 <div class="button">
-<a href="index.php?action=home">Home</a>
+<a href="/">Home</a>
 </div>
 <div class="button">
-<a href="index.php?action=jobs">Banen</a>
+<a href="/?action=jobs">Banen</a>
 </div>
 </div>';
 	}
