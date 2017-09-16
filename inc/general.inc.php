@@ -46,10 +46,15 @@
 	 * Deze functie laat het navigatiemenu zien
 	 */
 	function displayNavigation() {
-		echo "<div id=\"navigation\">";
-		echo "	<div class=\"button\"><a href=\"index.php?action=home\">Home</a></div>";
-		echo "	<div class=\"button\"><a href=\"index.php?action=jobs\">Banen</a></div>";
-		echo "</div>";
+		echo '
+<div id="navigation">
+<div class="button">
+<a href="index.php?action=home">Home</a>
+</div>
+<div class="button">
+<a href="index.php?action=jobs">Banen</a>
+</div>
+</div>';
 	}
 
 	/**
