@@ -21,6 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>',$config['pagetitle'],'</title>
 <link type="text/css" rel="stylesheet" href="/css/style.css">
+<link rel="icon" href="favicon.gif" type="image/gif" >
 <script type="text/javascript" language="javascript" src="/js/general.js"></script>
 </head>
 <body>
@@ -47,6 +48,7 @@
 	 */
 	function displayNavigation() {
 		echo '
+<a href="/"><img width="128" height="128" src="/img/logo.png" alt="logo" title="logo"></a>
 <div id="navigation">
 <div class="button">
 <a href="/">Home</a>
