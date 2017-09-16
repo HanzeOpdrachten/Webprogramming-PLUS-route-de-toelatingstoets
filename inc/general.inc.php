@@ -61,8 +61,9 @@
 	 * Deze functie laat de beginpagina zien
 	 */
 	function displayHome() {
-		echo "<h1>Welkom</h1>";
-		echo "Maak een keuze uit het navigatiemenu";
+		echo '
+<h1>Welkom</h1>
+<p>Maak een keuze uit het navigatiemenu</p>';
 	}
 	
 	/**
