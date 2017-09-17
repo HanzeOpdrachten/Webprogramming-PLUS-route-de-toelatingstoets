@@ -61,7 +61,7 @@
 	function displayAddEmployee() {
 		echo'
 <h1>Werknemer toevoegen</h1>
-<form method="post" action="index.php?action=insertemployee">
+<form method="post" action="index.php?action=insertemployee" enctype="multipart/form-data">
 <table>
 <tr>
 <td>Voornaam:</td>
@@ -101,6 +101,10 @@
 <td><input type="text" name="DepartmentID"></td>
 </tr>
 <tr>
+<td>Afbeelding:</td>
+<td><input type="file" name="Picture"</td>
+</tr>
+<tr>
 <td></td>
 <td><button type="submit">Opslaan</button></td>
 </tr>
@@ -129,7 +133,7 @@
 
 			echo'
 <h1>Werknemer bewerken</h1>
-<form method="post" action="index.php?action=updateemployee">
+<form method="post" action="index.php?action=updateemployee" enctype="multipart/form-data">
 <table>
 <tr>
 <td>Voornaam:</td>
@@ -169,6 +173,10 @@
 <td><input type="text" name="DepartmentID" value="',$row['DepartmentID'],'"></td>
 </tr>
 <tr>
+<td>Afbeelding:</td>
+<td><input type="file" name="Picture"</td>
+</tr>
+<tr>
 <td></td>
 <td><button type="submit">Opslaan</button></td>
 </tr>
@@ -185,6 +193,25 @@
 	 * Deze functie voegt een nieuwe record toe aan de tabel Employees	 *
 	 */
 	function addEmployee($mysqli) {
+		if($_FILES['Picture']['error'] === UPLOAD_ERR_OK){ // If an image been uploaded
+			$num = time(); // Base 10 integer to convert
+			$b = 62; // Arbitrary base, up to 62. Add more characters for higher bases
+			$base='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Characters
+			$r = $num % $b ; // It's all scary math from here on
+			$res = $base[$r];
+			$q = floor($num/$b);
+			while ($q) {
+			$r = $q % $b;
+			$q =floor($q/$b);
+			$res = $base[$r].$res;
+			}
+
+			$picturename = $res.'.jpg';
+			move_uploaded_file($_FILES['Picture']['tmp_name'], getcwd().'/pictures/'.$picturename);
+		} else {
+			$picturename = 'default.jpg';
+		}
+
 		// Letop we maken gebruik van sprintf. Kijk op php.net voor meer info.
 		// Binnen sprintf staat %s voor een string, %d voor een decimaal (integer) en %f voor een float
 
@@ -197,7 +224,7 @@
 						$mysqli->real_escape_string($_POST['CommissionPCT']),
 						$mysqli->real_escape_string($_POST['ManagerID']),
 						$mysqli->real_escape_string($_POST['DepartmentID']),
-						$mysqli->real_escape_string('default.jpg'));
+						$picturename);
 
 		if (!$result = $mysqli->query($sql)) {
 			http_response_code(503);
@@ -214,6 +241,25 @@
 	 */
 	
 	function updateEmployee($mysqli) {
+		if($_FILES['Picture']['error'] === UPLOAD_ERR_OK){ // If an image been uploaded
+			$num = time(); // Base 10 integer to convert
+			$b = 62; // Arbitrary base, up to 62. Add more characters for higher bases
+			$base='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Characters
+			$r = $num % $b ; // It's all scary math from here on
+			$res = $base[$r];
+			$q = floor($num/$b);
+			while ($q) {
+			$r = $q % $b;
+			$q =floor($q/$b);
+			$res = $base[$r].$res;
+			}
+
+			$picturename = $res.'.jpg';
+			move_uploaded_file($_FILES['Picture']['tmp_name'], getcwd().'/pictures/'.$picturename);
+		} else {
+			$picturename = 'default.jpg';
+		}
+
 		$sql = sprintf("UPDATE `Employees` SET 
 						`FirstName` = '%s',
 						`LastName` = '%s',
@@ -233,7 +279,7 @@
 						$mysqli->real_escape_string($_POST['CommissionPCT']),
 						$mysqli->real_escape_string($_POST['ManagerID']),
 						$mysqli->real_escape_string($_POST['DepartmentID']),
-						$mysqli->real_escape_string('default.jpg'),
+						$mysqli->real_escape_string($picturename),
 						$mysqli->real_escape_string($_POST['EmployeeID']) );
 
 		if (!$result = $mysqli->query($sql)) {
