@@ -65,6 +65,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `CommissionPCT` varchar(16) NOT NULL,
   `ManagerID` int(11) NOT NULL,
   `DepartmentID` int(11) NOT NULL,
+  `Pictures` varchar(255) NOT NULL,
   PRIMARY KEY  (`EmployeeID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=207 ;
 
@@ -72,27 +73,27 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Gegevens worden uitgevoerd voor tabel `employees`
 --
 
-INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `Email`, `PhoneNumber`, `HireDate`, `JobID`, `Salary`, `CommissionPCT`, `ManagerID`, `DepartmentID`) VALUES
-(100, 'Steven', 'King', 'SKING', '515.123.4567', '0000-00-00 00:00:00', 0, 52800, '', 0, 90),
-(101, 'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', '0000-00-00 00:00:00', 0, 37400, '', 100, 90),
-(102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', '0000-00-00 00:00:00', 0, 37400, '', 100, 90),
-(200, 'Jennifer', 'Whalen', 'JWHALEN', '515.123.4444', '0000-00-00 00:00:00', 0, 10648, '', 101, 10),
-(205, 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '0000-00-00 00:00:00', 0, 26400, '', 101, 110),
-(206, 'William', 'Gietz', 'WGIETZ', '515.123.8181', '0000-00-00 00:00:00', 0, 20086, '', 205, 110),
-(149, 'Eleni', 'Zlotkey', 'EZLOTKEY', '011.44.1344.4290', '2029-01-00 00:00:00', 0, 23100, ',2', 100, 80),
-(174, 'Ellen', 'Abel', 'EABEL', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 24200, ',3', 149, 80),
-(176, 'Jonathon', 'Taylor', 'JTAYLOR', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 18920, ',2', 149, 80),
-(178, 'Kimberely', 'Grant', 'KGRANT', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 15400, ',15', 149, 0),
-(124, 'Kevin', 'Mourgos', 'KMOURGOS', '650.123.5234', '0000-00-00 00:00:00', 0, 12760, '', 100, 50),
-(141, 'Trenna', 'Rajs', 'TRAJS', '650.121.8009', '0000-00-00 00:00:00', 0, 7700, '', 124, 50),
-(142, 'Curtis', 'Davies', 'CDAVIES', '650.121.2994', '0000-00-00 00:00:00', 0, 6820, '', 124, 50),
-(143, 'Randall', 'Matos', 'RMATOS', '650.121.2874', '0000-00-00 00:00:00', 0, 5720, '', 124, 50),
-(144, 'Peter', 'Vargas', 'PVARGAS', '650.121.2004', '0000-00-00 00:00:00', 0, 5500, '', 124, 50),
-(103, 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', '0000-00-00 00:00:00', 0, 19800, '', 102, 60),
-(104, 'Bruce', 'Ernst', 'BERNST', '590.423.4568', '0000-00-00 00:00:00', 0, 13200, '', 103, 60),
-(107, 'Diana', 'Lorentz', 'DLORENTZ', '590.423.5567', '0000-00-00 00:00:00', 0, 9240, '', 103, 60),
-(201, 'Michael', 'Hartstein', 'MHARTSTE', '515.123.5555', '0000-00-00 00:00:00', 0, 28600, '', 100, 20),
-(202, 'Pat', 'Fay', 'PFAY', '603.123.6666', '0000-00-00 00:00:00', 0, 13200, '', 201, 20);
+INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `Email`, `PhoneNumber`, `HireDate`, `JobID`, `Salary`, `CommissionPCT`, `ManagerID`, `DepartmentID`, `Pictures`) VALUES
+(100, 'Steven', 'King', 'SKING', '515.123.4567', '0000-00-00 00:00:00', 0, 52800, '', 0, 90, 'default.jpg'),
+(101, 'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', '0000-00-00 00:00:00', 0, 37400, '', 100, 90, 'default.jpg'),
+(102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', '0000-00-00 00:00:00', 0, 37400, '', 100, 90, 'default.jpg'),
+(200, 'Jennifer', 'Whalen', 'JWHALEN', '515.123.4444', '0000-00-00 00:00:00', 0, 10648, '', 101, 10, 'default.jpg'),
+(205, 'Shelley', 'Higgins', 'SHIGGINS', '515.123.8080', '0000-00-00 00:00:00', 0, 26400, '', 101, 110, 'default.jpg'),
+(206, 'William', 'Gietz', 'WGIETZ', '515.123.8181', '0000-00-00 00:00:00', 0, 20086, '', 205, 110, 'default.jpg'),
+(149, 'Eleni', 'Zlotkey', 'EZLOTKEY', '011.44.1344.4290', '2029-01-00 00:00:00', 0, 23100, ',2', 100, 80, 'default.jpg'),
+(174, 'Ellen', 'Abel', 'EABEL', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 24200, ',3', 149, 80, 'default.jpg'),
+(176, 'Jonathon', 'Taylor', 'JTAYLOR', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 18920, ',2', 149, 80, 'default.jpg'),
+(178, 'Kimberely', 'Grant', 'KGRANT', '011.44.1644.4292', '0000-00-00 00:00:00', 0, 15400, ',15', 149, 0, 'default.jpg'),
+(124, 'Kevin', 'Mourgos', 'KMOURGOS', '650.123.5234', '0000-00-00 00:00:00', 0, 12760, '', 100, 50, 'default.jpg'),
+(141, 'Trenna', 'Rajs', 'TRAJS', '650.121.8009', '0000-00-00 00:00:00', 0, 7700, '', 124, 50, 'default.jpg'),
+(142, 'Curtis', 'Davies', 'CDAVIES', '650.121.2994', '0000-00-00 00:00:00', 0, 6820, '', 124, 50, 'default.jpg'),
+(143, 'Randall', 'Matos', 'RMATOS', '650.121.2874', '0000-00-00 00:00:00', 0, 5720, '', 124, 50, 'default.jpg'),
+(144, 'Peter', 'Vargas', 'PVARGAS', '650.121.2004', '0000-00-00 00:00:00', 0, 5500, '', 124, 50, 'default.jpg'),
+(103, 'Alexander', 'Hunold', 'AHUNOLD', '590.423.4567', '0000-00-00 00:00:00', 0, 19800, '', 102, 60, 'default.jpg'),
+(104, 'Bruce', 'Ernst', 'BERNST', '590.423.4568', '0000-00-00 00:00:00', 0, 13200, '', 103, 60, 'default.jpg'),
+(107, 'Diana', 'Lorentz', 'DLORENTZ', '590.423.5567', '0000-00-00 00:00:00', 0, 9240, '', 103, 60, 'default.jpg'),
+(201, 'Michael', 'Hartstein', 'MHARTSTE', '515.123.5555', '0000-00-00 00:00:00', 0, 28600, '', 100, 20, 'default.jpg'),
+(202, 'Pat', 'Fay', 'PFAY', '603.123.6666', '0000-00-00 00:00:00', 0, 13200, '', 201, 20, 'default.jpg');
 
 -- --------------------------------------------------------
 
