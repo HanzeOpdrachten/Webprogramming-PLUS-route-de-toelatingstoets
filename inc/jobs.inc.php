@@ -4,7 +4,21 @@
 	 * Deze functie laat alle banen in het systeem zien	 *
 	 */
 	function displayAllJobs($mysqli) {
-		$sql = "SELECT * FROM `Jobs` ORDER BY `JobTitle`";	
+		if(isset($_GET['sort'])) {
+			if($_GET['sort'] == 'MinSalary') {
+				$sort = 'MinSalary';
+			}
+			elseif($_GET['sort'] == 'MaxSalary') {
+				$sort = 'MaxSalary';
+			}
+			else {
+				$sort = 'JobTitle';
+			}
+		} else {
+			$sort = 'JobTitle';
+		}
+
+		$sql = 'SELECT * FROM `Jobs` ORDER BY `'.$sort.'`';	
 
 		if (!$result = $mysqli->query($sql)) {
 			http_response_code(503);
@@ -20,9 +34,9 @@
 <br>
 <table>
 <tr>
-<th>Titel</th>
-<th>Minimum salaris</th>
-<th>Maximum salaris</th>
+<th><a href="/?action=jobs">Titel &#x25B2;</a></th>
+<th><a href="/?action=jobs&sort=MinSalary">Minimum salaris &#x25B2;</a></th>
+<th><a href="/?action=jobs&sort=MaxSalary">Maximum salaris &#x25B2;</a></th>
 <th>Actie</th>
 </tr>';
 
