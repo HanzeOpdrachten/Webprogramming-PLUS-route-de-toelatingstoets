@@ -76,33 +76,28 @@
 <td><input type="text" name="Email"></td>
 </tr>
 <tr>
-<tr>
 <td>Telefoonnummer:</td>
 <td><input type="text" name="PhoneNumber"></td>
 </tr>
-<tr>
 <tr>
 <td>Salaris:</td>
 <td><input type="text" name="Salary"></td>
 </tr>
 <tr>
-<tr>
 <td>Percentage provisie:</td>
 <td><input type="text" name="CommissionPCT"></td>
 </tr>
 <tr>
-<tr>
 <td>Manager:</td>
 <td><input type="text" name="ManagerID"></td>
 </tr>
-<tr>
 <tr>
 <td>Department:</td>
 <td><input type="text" name="DepartmentID"></td>
 </tr>
 <tr>
 <td>Afbeelding:</td>
-<td><input type="file" name="Picture"</td>
+<td><input type="file" name="Picture"></td>
 </tr>
 <tr>
 <td></td>
@@ -148,33 +143,28 @@
 <td><input type="text" name="Email" value="',$row['Email'],'"></td>
 </tr>
 <tr>
-<tr>
 <td>Telefoonnummer:</td>
 <td><input type="text" name="PhoneNumber" value="',$row['PhoneNumber'],'"></td>
 </tr>
-<tr>
 <tr>
 <td>Salaris:</td>
 <td><input type="text" name="Salary" value="',$row['Salary'],'"></td>
 </tr>
 <tr>
-<tr>
 <td>Percentage provisie:</td>
 <td><input type="text" name="CommissionPCT" value="',$row['CommissionPCT'],'"></td>
 </tr>
 <tr>
-<tr>
 <td>Manager:</td>
 <td><input type="text" name="ManagerID" value="',$row['ManagerID'],'"></td>
 </tr>
-<tr>
 <tr>
 <td>Department:</td>
 <td><input type="text" name="DepartmentID" value="',$row['DepartmentID'],'"></td>
 </tr>
 <tr>
 <td>Afbeelding:</td>
-<td><input type="file" name="Picture"</td>
+<td><input type="file" name="Picture"></td>
 </tr>
 <tr>
 <td></td>
