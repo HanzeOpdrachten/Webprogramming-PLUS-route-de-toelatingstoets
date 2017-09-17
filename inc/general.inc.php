@@ -22,7 +22,7 @@
 <title>',$config['pagetitle'],'</title>
 <link type="text/css" rel="stylesheet" href="/css/style.css">
 <link rel="icon" href="favicon.gif" type="image/gif" >
-<script type="text/javascript" language="javascript" src="/js/general.js"></script>
+<script type="text/javascript" src="/js/general.js"></script>
 </head>
 <body>
 <div id="wrapper">';
@@ -50,12 +50,11 @@
 		echo '
 <a href="/"><img width="128" height="128" src="/img/logo.png" alt="logo" title="logo"></a>
 <div id="navigation">
-<div class="button">
-<a href="/">Home</a>
-</div>
-<div class="button">
-<a href="/?action=jobs">Banen</a>
-</div>
+<div class="button"><a href="/">Home</a></div>
+<div class="button"><a href="/?action=jobs">Banen</a></div>
+<div class="button"><a href="/?action=locations">Locaties</a></div>
+<div class="button"><a href="/?action=employees">Werknemers</a></div>
+<div class="button"><a href="/?action=departments">Afdelingen</a></div>
 </div>';
 	}
 
