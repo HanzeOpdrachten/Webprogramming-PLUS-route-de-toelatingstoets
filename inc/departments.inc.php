@@ -20,10 +20,10 @@
 <br>
 <table>
 <tr>
-<th>Naam</td>
-<th>Manager</td>
-<th>Locatie</td>
-<th>Actie</td>
+<th>Naam</th>
+<th>Manager</th>
+<th>Locatie</th>
+<th>Actie</th>
 </tr>';
 
 		while ($row = $result->fetch_assoc()) {

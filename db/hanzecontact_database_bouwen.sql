@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `CommissionPCT` varchar(16) NOT NULL,
   `ManagerID` int(11) NOT NULL,
   `DepartmentID` int(11) NOT NULL,
-  `Pictures` varchar(255) NOT NULL,
+  `Picture` varchar(255) NOT NULL,
   PRIMARY KEY  (`EmployeeID`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=207 ;
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `employees` (
 -- Gegevens worden uitgevoerd voor tabel `employees`
 --
 
-INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `Email`, `PhoneNumber`, `HireDate`, `JobID`, `Salary`, `CommissionPCT`, `ManagerID`, `DepartmentID`, `Pictures`) VALUES
+INSERT INTO `employees` (`EmployeeID`, `FirstName`, `LastName`, `Email`, `PhoneNumber`, `HireDate`, `JobID`, `Salary`, `CommissionPCT`, `ManagerID`, `DepartmentID`, `Picture`) VALUES
 (100, 'Steven', 'King', 'SKING', '515.123.4567', '0000-00-00 00:00:00', 0, 52800, '', 0, 90, 'default.jpg'),
 (101, 'Neena', 'Kochhar', 'NKOCHHAR', '515.123.4568', '0000-00-00 00:00:00', 0, 37400, '', 100, 90, 'default.jpg'),
 (102, 'Lex', 'De Haan', 'LDEHAAN', '515.123.4569', '0000-00-00 00:00:00', 0, 37400, '', 100, 90, 'default.jpg'),

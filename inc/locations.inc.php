@@ -20,11 +20,11 @@
 <br>
 <table>
 <tr>
-<th>Adres</td>
-<th>Postcode</td>
-<th>Stad</td>
-<th>Provincie</td>
-<th>Actie</td>
+<th>Adres</th>
+<th>Postcode</th>
+<th>Stad</th>
+<th>Provincie</th>
+<th>Actie</th>
 </tr>';
 
 		while ($row = $result->fetch_assoc()) {

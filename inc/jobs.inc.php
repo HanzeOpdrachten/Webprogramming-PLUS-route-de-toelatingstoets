@@ -20,10 +20,10 @@
 <br>
 <table>
 <tr>
-<th>Titel</td>
-<th>Minimum salaris</td>
-<th>Maximum salaris</td>
-<th>Actie</td>
+<th>Titel</th>
+<th>Minimum salaris</th>
+<th>Maximum salaris</th>
+<th>Actie</th>
 </tr>';
 
 		while ($row = $result->fetch_assoc()) {
