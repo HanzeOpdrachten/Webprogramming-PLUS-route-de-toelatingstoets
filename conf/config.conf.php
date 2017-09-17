@@ -23,5 +23,3 @@
 	
 	$config['pagetitle'] = "Hanze Contact"; // titel van het systeem
 	$config['defaultaction'] = "home"; // De standaard actie als er geen is opgegeven
-	
-?>

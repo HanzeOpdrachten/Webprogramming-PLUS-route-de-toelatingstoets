@@ -28,7 +28,7 @@
 	displayNavigation(); // de menubalk tonen
 	
 	// Hieronder alle functies die wel output genereren naar de browser
-	switch(getCurrentAction()) {		
+	switch(getCurrentAction()) {
 		case 'jobs':
 			displayAllJobs($mysqli);
 		break;
@@ -43,10 +43,7 @@
 			displayHome();
 		break;
 	}
-		
-	
-	displayFooter(); // de HTML footer tonen
-	
-	databaseDisconnect($mysqli); // verbinding met de database verbreken
 
-?>
+	displayFooter(); // de HTML footer tonen
+
+	databaseDisconnect($mysqli); // verbinding met de database verbreken

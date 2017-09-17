@@ -34,6 +34,3 @@
 	function databaseDisconnect($mysqli) {
 		$mysqli->close();
 	}
-	
-	
-?>

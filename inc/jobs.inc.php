@@ -181,5 +181,3 @@
 		header('location: /?action=jobs'); // terugkeren naar jobs
 		exit();
 	}
-
-?>

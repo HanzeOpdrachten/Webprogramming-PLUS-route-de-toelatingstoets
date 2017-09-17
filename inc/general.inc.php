@@ -96,5 +96,3 @@
 			return $config['defaultaction'];
 		}
 	}
-
-?>
