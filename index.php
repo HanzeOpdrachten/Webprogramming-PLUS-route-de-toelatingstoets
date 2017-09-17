@@ -43,25 +43,25 @@
 		// Employees
 
 		case 'insertemployee':
-			addEmployees($mysqli);
+			addEmployee($mysqli);
 		break;
 		case 'updateemployee':
-			updateEmployees($mysqli);
+			updateEmployee($mysqli);
 		break;		
 		case 'deleteemployee':
-			deleteEmployees($mysqli);
+			deleteEmployee($mysqli);
 		break;
 		
 		// Departments
 
 		case 'insertdepartment':
-			addDepartments($mysqli);
+			addDepartment($mysqli);
 		break;
 		case 'updatedepartment':
-			updateDepartments($mysqli);
+			updateDepartment($mysqli);
 		break;		
 		case 'deletedepartment':
-			deleteDepartments($mysqli);
+			deleteDepartment($mysqli);
 		break;
 	}
 	
