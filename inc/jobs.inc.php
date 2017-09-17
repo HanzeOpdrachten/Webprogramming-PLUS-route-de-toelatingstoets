@@ -34,9 +34,9 @@
 <br>
 <table>
 <tr>
-<th><a href="/?action=jobs">Titel &#x25B2;</a></th>
-<th><a href="/?action=jobs&sort=MinSalary">Minimum salaris &#x25B2;</a></th>
-<th><a href="/?action=jobs&sort=MaxSalary">Maximum salaris &#x25B2;</a></th>
+<th><a href="/?action=jobs">Titel &#9650;</a></th>
+<th><a href="/?action=jobs&sort=MinSalary">Minimum salaris &#9650;</a></th>
+<th><a href="/?action=jobs&sort=MaxSalary">Maximum salaris &#9650;</a></th>
 <th>Actie</th>
 </tr>';
 
